@@ -1,4 +1,6 @@
-package com.example.mytest
+package com.example.mytest.data.repository
+
+import com.example.mytest.domain.model.Operation
 
 class CalculatorRepository {
     private val history = mutableListOf<Operation>()

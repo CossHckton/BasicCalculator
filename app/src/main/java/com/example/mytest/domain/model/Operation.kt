@@ -1,4 +1,6 @@
-package com.example.mytest
+package com.example.mytest.domain.model
+
+import com.example.mytest.domain.model.OperationType
 
 data class Operation(
     val inputOne: Double,
@@ -6,4 +8,3 @@ data class Operation(
     val type: OperationType,
     val result: Double
 )
-

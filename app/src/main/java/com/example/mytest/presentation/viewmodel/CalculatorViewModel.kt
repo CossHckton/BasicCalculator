@@ -1,6 +1,12 @@
-package com.example.mytest
+package com.example.mytest.presentation.viewmodel
 
 import androidx.lifecycle.ViewModel
+import com.example.mytest.data.repository.CalculatorRepository
+import com.example.mytest.domain.model.Operation
+import com.example.mytest.domain.model.OperationType
+import com.example.mytest.domain.usecase.CalculateOperationUseCase
+import com.example.mytest.domain.usecase.ValidateNumerInputUseCase
+import com.example.mytest.presentation.state.CalculatorUIState
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.update

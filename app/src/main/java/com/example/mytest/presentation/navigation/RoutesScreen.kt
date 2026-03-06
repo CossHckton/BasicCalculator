@@ -1,4 +1,4 @@
-package com.example.mytest
+package com.example.mytest.presentation.navigation
 
 sealed class ScreenRoutes : NameRoutes {
     object MainScreen : ScreenRoutes() {

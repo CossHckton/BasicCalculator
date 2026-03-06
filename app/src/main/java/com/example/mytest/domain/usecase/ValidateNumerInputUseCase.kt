@@ -1,4 +1,4 @@
-package com.example.mytest
+package com.example.mytest.domain.usecase
 
 class ValidateNumerInputUseCase {
     private val regex = Regex("^-?\\d*\\.?\\d*$")

@@ -1,4 +1,4 @@
-package com.example.mytest
+package com.example.mytest.domain.model
 
 enum class OperationType(val symbol: String, displayName: String) {
     SUM("+", "SUMA"),

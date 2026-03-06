@@ -1,4 +1,5 @@
-package com.example.mytest
+package com.example.mytest.presentation.screen.history
+
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -12,11 +13,11 @@ import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-
+import com.example.mytest.presentation.viewmodel.CalculatorViewModel
+import androidx.compose.runtime.getValue
 
 @Composable
 fun HistoricScreen(
@@ -26,27 +27,27 @@ fun HistoricScreen(
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
 
     Column(
-        modifier = Modifier
+        modifier = Modifier.Companion
             .fillMaxSize()
             .padding(16.dp),
-        verticalArrangement = Arrangement.spacedBy (16.dp)
+        verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
         Text("Historial")
 
         Row(
-            modifier = Modifier.fillMaxWidth(),
+            modifier = Modifier.Companion.fillMaxWidth(),
             horizontalArrangement = Arrangement.spacedBy(8.dp)
         ) {
             OutlinedButton(
                 onClick = onBack,
-                modifier = Modifier.weight(1f)
+                modifier = Modifier.Companion.weight(1f)
             ) {
                 Text("Volver")
             }
 
             Button(
                 onClick = viewModel::clearHistory,
-                modifier = Modifier.weight(1f),
+                modifier = Modifier.Companion.weight(1f),
                 enabled = uiState.history.isNotEmpty()
             ) {
                 Text("Eliminar todo")
@@ -57,19 +58,19 @@ fun HistoricScreen(
             Text("No hay operaciones registradas")
         } else {
             LazyColumn(
-                modifier = Modifier.fillMaxSize(),
+                modifier = Modifier.Companion.fillMaxSize(),
                 verticalArrangement = Arrangement.spacedBy(16.dp)
             ) {
-                itemsIndexed(uiState.history){ index, operation ->
+                itemsIndexed(uiState.history) { index, operation ->
                     Column(
-                        modifier = Modifier
+                        modifier = Modifier.Companion
                             .fillMaxSize()
                             .padding(16.dp),
                         verticalArrangement = Arrangement.spacedBy(16.dp)
                     ) {
                         Text(text = viewModel.formatOperation(operation))
                         TextButton(
-                            onClick = {viewModel.deleteOperation(index)}
+                            onClick = { viewModel.deleteOperation(index) }
                         ) {
                             Text("Eliminar")
                         }

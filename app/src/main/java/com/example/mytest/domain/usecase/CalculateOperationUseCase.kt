@@ -1,4 +1,6 @@
-package com.example.mytest
+package com.example.mytest.domain.usecase
+
+import com.example.mytest.domain.model.OperationType
 
 class CalculateOperationUseCase {
     operator fun invoke(

@@ -1,4 +1,7 @@
-package com.example.mytest
+package com.example.mytest.presentation.state
+
+import com.example.mytest.domain.model.Operation
+import com.example.mytest.domain.model.OperationType
 
 data class CalculatorUIState(
     val firstNumber: String = "",
